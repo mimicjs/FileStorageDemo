@@ -22,7 +22,7 @@ In Scope:
 			- Appearance
 				- Rectangular box
 					- Dimensions
-						- default: width is 80% of parent element width, height is 1/4 of width
+						- default: width is % of parent element width, height is 1/4 of width
 					- White background
 					- Black text inside, centered vertically horizontally
 						- Text shown
