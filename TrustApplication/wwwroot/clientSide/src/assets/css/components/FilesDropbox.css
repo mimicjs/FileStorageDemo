@@ -1,0 +1,8 @@
+.filesDropbox {
+    border-style: solid;
+    max-width: 100%;
+    padding: 50px;
+    font-size: 18px;
+    white-space: pre-wrap;
+    cursor: pointer;
+}
