@@ -1,0 +1,5 @@
+Static page:
+
+Cross-Origin Request Blocked: The Same Origin Policy disallows reading the remote resource at http://localhost:29323/api/Customer/PostFileUpload. (Reason: CORS header 'Access-Control-Allow-Origin' missing).
+
+See your URL origin
