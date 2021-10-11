@@ -2,7 +2,7 @@
 
 To run this application, download code
 - Open solution within Visual Studio, fetch/update Dependencies/Packages, and Run (incl. Build)
-- CMD or Batch within wwwroot/clientSide where package.json sits, and npm run start
+- CMD or Bash within wwwroot/clientSide where package.json sits, and npm run start
 
 ![moqup](https://user-images.githubusercontent.com/32786237/136834531-5aacb802-ea73-4603-851a-ec960d92ed4c.PNG)
 <br/>
