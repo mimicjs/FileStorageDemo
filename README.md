@@ -1,18 +1,17 @@
 # TrustApplication
 
 ![moqup](https://user-images.githubusercontent.com/32786237/136834531-5aacb802-ea73-4603-851a-ec960d92ed4c.PNG)
-
-AS A business user
-I WANT to upload files
-AND view list of uploaded files when uploaded successfully
-SO THAT I am able to provide files for later business BAU usage
-
-Project: Files Import for General BAU use
-
----
+<br/>
+AS A business user <br/>
+I WANT to upload files <br/>
+AND view list of uploaded files when uploaded successfully <br/>
+SO THAT I am able to provide files for later business BAU usage <br/>
+<br/>
+Project: Files Import for General BAU use <br/>
 
 In Scope:
-	- 0. On (new) Page load
+
+	0. On (new) Page load
 		- Endpoint
 			- default: <localhost, no defined endpoint>
 		- Encryption
@@ -68,10 +67,10 @@ In Scope:
 				- default:
 					- Append on successful 
 					- Loses all data on page refresh
-	- 1. On User interacting with component
+	1. On User interacting with component
 		- Click
 		- Drag and drop files
-	- 2. On User locating file(s)
+	2. On User locating file(s)
 		- Opens 'Browse for file(s)' window provided by browser
 		- Ability to select 1 or more file(s)
 		- Click 'Cancel' or 'X' button to Abort
@@ -80,8 +79,8 @@ In Scope:
 			- Continue to state 3.
 		- Validation
 			- *refer to section below "Input restrictions & validations (on all file(s))"
-	- 3. Time between Uploading File(s) and Uploaded successfully
-		Front-end
+	3. Time between Uploading File(s) and Uploaded successfully
+		- Front-end
 			- UI Appearance change
 				- Text
 					- "Uploading…”
@@ -92,21 +91,21 @@ In Scope:
 				Endpoint: see Back-end endpoint
 				Content-Type: application/json
 				Body: Filename, File’s Extension, File’s content
-		Back-end
-			- Endpoint: localhost/api/Customer/PostFileUpload
-			- Validation
-				- *refer to section below "Input restrictions & validations (on all file(s))"
-			- Storage:
-				- In-memory database within 
-	- 4. Response from API arrival
-	  - API sends back as a response
-	    - Success (2XX)
-	      - File data successfully uploaded
+			- Back-end
+				- Endpoint: localhost/api/Customer/PostFileUpload
+				- Validation
+					- *refer to section below "Input restrictions & validations (on all file(s))"
+				- Storage:
+					- In-memory database within 
+	4. Response from API arrival
+		- API sends back as a response
+			- Success (2XX)
+				- File data successfully uploaded
 		- [ { filename: <Filename>, dateTimeUploaded: <Uploaded Date> }, ... ]
-	    - Unsuccessful (4XX or 5XX)
-	      - TBC
-	  - Revert 'Upload Area component' to state 0.
-	  - Append response file data onto existing "Display Uploaded grid component"
+			- Unsuccessful (4XX or 5XX)
+				- TBC
+		- Revert 'Upload Area component' to state 0.
+		- Append response file data onto existing "Display Uploaded grid component"
 
 	
 	Input restrictions & validations (on all file(s))
@@ -135,25 +134,26 @@ In Scope:
 		
 					
 Out of Scope:
-	- Upload Folder(s)
-  - Not-200 status code paths (flow for Validation errors or Exceptions)
-  - Separation of Files’ Extension from its Filename
-  - Restrictions to File(s) allowed to be uploaded (see Validations section)
-    - Quantity of File(s) restriction
-    - Filename length restriction
-    - File extension type, length restriction
-    - Filesize restriction
-    - File content restriction
-  - Anti-virus checks on file(s)
-  - Malicious request(s)
-    - Restricting quantity of file(s) or bandwidth limit on ip address/user
-  - Duplication of Files
-  - Masking filename to fetch from lookup table
-  - Persistent storage of user's uploaded files
-  - User able to download their Uploaded file(s)
-  - Preview of Uploaded file(s)
-  - Notify user of any file(s) unsuccessfully uploaded
-  - Testing: 
-      - Unit test (+ Moq)
-      - End to End
-      - Selenium WebDriver
+
+		- Upload Folder(s)
+		- Not-200 status code paths (flow for Validation errors or Exceptions)
+		- Separation of Files’ Extension from its Filename
+		- Restrictions to File(s) allowed to be uploaded (see Validations section)
+			- Quantity of File(s) restriction
+			- Filename length restriction
+			- File extension type, length restriction
+			- Filesize restriction
+			- File content restriction
+		- Anti-virus checks on file(s)
+		- Malicious request(s)
+			- Restricting quantity of file(s) or bandwidth limit on ip address/user
+		- Duplication of Files
+		- Masking filename to fetch from lookup table
+		- Persistent storage of user's uploaded files
+		- User able to download their Uploaded file(s)
+		- Preview of Uploaded file(s)
+		- Notify user of any file(s) unsuccessfully uploaded
+		- Testing: 
+				- Unit test (+ Moq)
+				- End to End
+				- Selenium WebDriver
