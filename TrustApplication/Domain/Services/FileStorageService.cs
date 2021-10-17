@@ -22,13 +22,13 @@ namespace TrustApplication.Domain.Services
         /// <summary>
         /// Uploads file meta data and its content to the system file storage
         /// </summary>
-        public async Task<List<FileEntity>> UploadFilesToStorage(IEnumerable<FileEntity> files)
+        public List<FileEntity> UploadFilesToStorage(IEnumerable<FileEntity> files)
         {
             List<FileEntity> _successfulFiles = new List<FileEntity>();
             foreach (FileEntity file in files)
             {
                 IList<string> error;
-                if (!ValidateFile(file, out error))
+                if (!ValidateFile(file))
                 {
                     continue;
                 }
@@ -43,17 +43,14 @@ namespace TrustApplication.Domain.Services
         /// <summary>
         /// Validates whether if the File is valid for storage
         /// </summary>
-        private static Boolean ValidateFile(FileEntity file, out IList<String> error)
+        private static Boolean ValidateFile(FileEntity file)
         {
-            error = new List<String>();
-            if (file == null)
+            if (file == null) //File is null
             {
-                error.Add("File is null");
                 return false;
             }
             else if (file.Filename.Length >= 255) //Windows' limit on filenames
             {
-                error.Add("Filename exceeds 255 characters");
                 return false;
             }
             return true;
