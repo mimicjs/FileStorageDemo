@@ -27,7 +27,6 @@ namespace TrustApplication.Domain.Services
             List<FileEntity> _successfulFiles = new List<FileEntity>();
             foreach (FileEntity file in files)
             {
-                IList<string> error;
                 if (!ValidateFile(file))
                 {
                     continue;
